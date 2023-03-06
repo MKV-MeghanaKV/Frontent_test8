@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>SpeechAI</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="main.css">
+  <link rel=“stylesheet” href=“https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css”>
+
+  <link href=“https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css” rel=“stylesheet”>
+
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo white">Speech.AI</div>
+      <div class="menu white1">
+        <ul>
+          <li class="white1"><a href="">Home</a></li>
+          <li class="white1"><a href="">Login</a></li>
+          <li class="white1" style="margin-right: 40px;"><a href="">Register</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="block">
+    <div class='console-container'><span id='text'></span><div class='console-underscore' id='console'>&#95;</div></div> 
+  </header>
+  <br>
+
+
+<main class="content">
+  <div class="content1">
+  <br>
+  <hr>
+  </div>
+  
+   <div class="content1">
+     <p>March 1,2023&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style='font-size:40px;'>Speech AI&#8595;</span></p>
+  
+    </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="middle">
+    <h2>What Speech AI do?</h2>
+  </div>
+  <br>
+  <br>
+  <br>
+  <div class="middle">
+    <p>
+      Speech-to-speech translation to other language with preserved voice characteristics found in the source voice throught the translation.
+    </p>
+  </div>
+  <br>
+  <div class="middle">
+      <p>
+        We are excited to introduce SpeechAI to get users’ feedback and learn about its strengths and weaknesses. Try it now at coolspeech.in.
+      </p> 
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="methods">
+    <br>
+    <br>
+        <h2>
+          Methods
+        </h2>
+        <br>
+        <br>
+        <br>
+        <p>Methods followed for Speech translation from one language to another are, at first the audio
+          input from the user is taken and then it is converted into .wav format and then processes the
+          audio to a particular frequency range of 22050 Hz. After setting the audio to a particular
+          frequency the multiple channel audio is converted into single channel, then the audio file is
+          divided into smaller chunks and speech present in each chunk is converted into text. Later it
+          is fed to a Tacotron 2 model which is a architecture for text-to-speech synthesis which
+          consists of an encoder and decoder network. It includes a mel spectrogram prediction
+          network, which generates a mel spectrogram which have a ability to generate high quality
+          speech that is difficult to distinguish from human speech. Finally the translated audio will be
+          stored in S3 bucket which allows the user to store and retrieve any amount of data.</p>
+          <br>
+          <img src="melspec.jfif">
+          <br>
+          <br>
+          <br>
+          <h3>Using Mel-spectrogram for feature extraction</h3>
+          <br>
+          <br>
+          <br>
+          <p>A Mel-spectrogram is a visual representation of the spectral content of a signal as a function
+            of time and frequency, with frequency on the y-axis and time on the x-axis as shown in figure
+            .It is computed by applying a Short-Time Fourier Transform (STFT) to a signal, and then
+            mapping the resulting spectral power to the mel scale, which is a nonlinear scale that more
+            closely approximates the human perception of pitch.
+            Mel-spectrograms are commonly used for feature extraction in the field of speech and music
+            processing. They can be used to extract features for tasks such as speech recognition, music
+            classification, and speaker identification.</p>
+            <br>
+            <br>
+            <p>To compute a mel spectrogram the following steps are followed and also represented in below figure.</p><br>
+              
+             <p> 1. Pre-process the signal: This may include applying some filtering or denoising
+              techniques to the signal to remove unwanted noise or reduce the bandwidth of the 
+              signal.<br><br>
+              2. Compute the STFT of the signal: This involves dividing the signal into overlapping 
+              frames and applying the Fast Fourier Transform (FFT) to each frame to obtain the 
+              spectral content of the signal at that time.<br><br>
+              3. Map the spectral power to the mel scale: This involves applying a mel-frequency 
+              warping function to the power spectrum obtained from the STFT to obtain a 
+              frequency scale that more closely approximates the human perception of pitch.<br><br>
+              4. Compute the log power spectrogram: The mel spectrogram is typically computed as 
+              the log power of the mel-scaled spectral content. This is done by taking the logarithm 
+              of the spectral power in each mel-scaled frequency bin.<br><br>
+              5. Display the mel spectrogram: The resulting mel spectrogram can be visualized as a 
+              2D image, with time on the x-axis and frequency on the y-axis. The intensity of each 
+              pixel in the image represents the log power of the signal at that time and frequency.</p>
+              <br>
+              <img src="melspecanalysis.jfif">
+              <br>
+              <br>
+              <br>
+  </div>
+  <br>
+  <br>
+  <div class="content1">
+    <br>
+    <hr>
+    </div>
+  <br>
+  <br>
+  <div class="middle">
+    <h2>System Design</h2>
+    <br>
+    <br>
+    <br>
+    <img src="Sys.jpeg">
+    <br>
+    <br>
+  
+  </div>
+  <div class="content1">
+    <br>
+    <hr>
+    </div>
+  <div class="middle">
+    <br>
+    <br>
+    <h2>Applications</h2>
+    <br>
+    <br>
+    
+    <ul>
+      <li>E-Learning</li>
+      <li>Language Translator</li>
+      <li>Chat bots</li>
+      <li>Voice Assistants</li>
+      <li>Movie Dubbing</li>
+      
+    </ul>
+  </div>
+
+
+        
+</main>
+
+<br>
+<br>
+<div class="content1">
+  <br>
+  <hr>
+  </div>
+  <div class="content1">
+    <br>
+    <br>
+    <p style='font-size:30px;'>References&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+    <br>
+    <br>
+  </div>
+ <div class="middle">
+  <ol><li>Middi, Venkata Sai Rishita & Raju, Middi & Harris, Tanvir Ahmed. (2019). Machine 
+    translation using natural language processing. MATEC Web of Conferences. 277. 02004. 
+    10.1051/matecconf/201927702004.</li><br><br>
+     <li>Anna Favaro, Licia Sbattella, Roberto Tedesco, and Vincenzo Scotti. 2021. ITAcotron 2: 
+    Transfering English Speech Synthesis Architectures and Speech Features to Italian. In 
+    Proceedings of the Fourth International Conference on Natural Language and Speech 
+    Processing (ICNLSP 2021), pages 83–88, Trento, Italy. Association for Computational 
+    Linguistics. https://aclanthology.org/2021.icnlsp-1.10</li><br><br>
+     <li>Shen, Jonathan & Pang, Ruoming & Weiss, Ron & Schuster, Mike & Jaitly, Navdeep & 
+    Yang, Zongheng & Chen, Zhifeng & Zhang, Yu & Wang, Yuxuan & Skerrv-Ryan, Rj & 
+    Saurous, Rif & Agiomvrgiannakis, Yannis & Wu, Yonghui. (2018). Natural TTS Synthesis 
+    by Conditioning Wavenet on MEL Spectrogram Predictions. 4779-4783. 
+    10.1109/ICASSP.2018.8461368.</li><br><br>
+     <li>Kong, J., Kim, J. and Bae, J., 2020. Hifi-gan: Generative adversarial networks for efficient 
+    and high fidelity speech synthesis. Advances in Neural Information Processing Systems, 33, 
+    pp.17022-17033.</li><br><br>
+    <li>K. Jiang and X. Lu, "Natural Language Processing and Its Applications in Machine 
+    Translation: A Diachronic Review," 2020 IEEE 3rd International Conference of Safe 
+    Production and Informatization (IICSPI), 2020, pp. 210-214, doi: 
+    10.1109/IICSPI51290.2020.9332458.</li><br><br>
+     <li>Liu, Yifan and Jin Zheng. “Es-Tacotron2: Multi-Task Tacotron 2 with Pre-Trained 
+    Estimated Network for Reducing the Over-Smoothness Problem.” Inf. 10 (2019): 131. 
+    DOI:10.3390/INFO10040131</li><br><br>
+    <li>Ren, Yi, et al. "Fastspeech: Fast, robust and controllable text to speech." Advances in 
+    Neural Information Processing Systems 32 (2019).arXiv:1905.09263v5</li><br><br>
+     <li>K. Anil Kumar, H. R. Shiva Kumar, R. A. Ganesan and K. P. Jnanesh, "Efficient 
+    Human-Quality Kannada TTS using Transfer Learning on NVIDIA's Tacotron2," 2021 IEEE 
+    International Conference on Electronics, Computing and Communication Technologies 
+    (CONECCT), 2021, pp. 01-06, doi: 10.1109/CONECCT52877.2021.9622581.</li><br><br> </ol>
+    <br>
+    <br>
+</div>
+<div class="content1">
+  <br>
+  <hr style="height:10px;color:black;background-color:black;">
+  </div>
+<section>
+  <h2 class="title"style="text-decoration:underline;">FAQs</h2>
+  <br>
+  <div class="faq">
+    <h3>What is SpeechTTP?</h3>
+    <br>
+    <br>
+    <p>SpeechTTP is a cutting-edge technology that allows users to extract audio from a video and transcribe it into text. This is an incredibly useful tool for anyone who needs to transcribe videos for research, academic, or business purposes. With SpeechTTP, you can take any video file and extract the audio, convert it into a .wav format, transcribe the audio into text, and merge the transcribed audio and video back together.</p>
+   
+  </div>
+  <br>
+  <br>
+  <br>
+  
+  
+  <div class="faq">
+    <h3>What does SpeechTTP work?</h3>
+    <br>
+    <br>
+    <p>The process starts by taking a video file as an input, which is then fed into SpeechTTP's audio extraction module. This module uses advanced algorithms to extract the audio from the video file and convert it into a .wav format. The .wav file is then passed on to the transcription module, which uses state-of-the-art natural language processing (NLP) techniques to transcribe the audio into text.The transcribed text is then passed through a series of quality checks to ensure accuracy and correctness. Any errors or mistakes are flagged for review and correction by the user. Once the transcription is complete and accurate, the transcribed text is merged back with the original video file to create a fully transcribed video.
+
+      SpeechTTP is an incredibly powerful tool that has a wide range of applications. It can be used for academic research, legal transcription, subtitling, closed captioning, and much more. Its ability to extract audio from video and transcribe it with such accuracy and speed makes it an indispensable tool for anyone who works with video content on a regular basis.</p>
+  </div>
+  <br>
+  <br>
+  <br>
+  
+  <div class="faq">
+    <h3>What file types does SpeechTTP support?</h3>
+    <br>
+    <br>
+    <p>xyz</p>
+    
+  </div>
+  <br>
+  <br>
+  <br>
+  
+  <div class="faq">
+    <h3>Is there a limit on the size of files that can be processed by SpeechTTP?</h3>
+    <br>
+    <br>
+    <p>xyz</p>
+    
+  </div>
+  <br>
+  <br>
+  <br>
+  
+  <div class="faq">
+    <h3>How accurate is SpeechTTP's transcription service?</h3>
+    <br>
+    <br>
+    <p>xyz</p>
+    
+  </div>
+  <br>
+  <br>
+  <br>
+  
+  <div class="faq">
+    <h3>Can I use SpeechTTP for commercial purposes?</h3>
+    <br>
+    <br>
+    <p>xyz</p>
+    
+  </div>
+  <br>
+  <br>
+  <br>
+  
+  <div class="faq">
+    <h3>What payment methods are accepted for SpeechTTP?</h3>
+    <br>
+    <br>
+    <p>xyz</p>
+    
+  </div>
+  <br>
+  <br>
+  <br>
+  
+  <div class="faq">
+    <h3>What payment methods are accepted for SpeechTTP?</h3>
+    <br>
+    <br>
+    <p>xyz</p>
+    
+  </div>
+  <br>
+  <br>
+  <br>
+  
+  <div class="faq">
+    <h3>What kind of customer support is available for SpeechTTP users?</h3>
+    <br>
+    <br>
+    <p>xyz</p>
+    
+  </div>
+  <br>
+  <br>
+  
+  
+ </section> 
+
+
+<div class="content1">
+  <br>
+  <hr>
+  <br>
+</div>
+<div class="content1">
+  <br>
+  <br>
+  <p style='font-size:35px;'>Related Research&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+  <br>
+  <br>
+</div> 
+<article class="card">
+  <div class="card__wrapper">
+
+    <figure class="card__feature"><a href="https://ai.googleblog.com/2019/05/introducing-translatotron-end-to-end.html">
+      <img src="gif5.gif" width="275" height="240" frameBorder="0" class="card__img">
+      <h3 style="text-align:center;">Google Translatotron 2</h3></a>
+      <h5 style="text-align:center;color:rgb(63, 62, 62);">Jan 2022</h5>
+    </figure>
+  </div>
+</article>
+
+<article class="card">
+  <div class="card__wrapper">
+
+    <figure class="card__feature"><a href="https://ai.googleblog.com/2019/05/introducing-translatotron-end-to-end.html">
+      <img src="gif6.gif" width="275" height="240" frameBorder="0" class="card__img">
+      <h3 style="text-align:center;">Google Translatotron 2</h3></a>
+      <h5 style="text-align:center;color:rgb(63, 62, 62);">Jan 2022</h5>
+    </figure>
+ </div>
+</article>
+
+<article class="card">
+  <div class="card__wrapper">
+
+    <figure class="card__feature"><a href="https://ai.googleblog.com/2019/05/introducing-translatotron-end-to-end.html">
+      <img src="gif4.gif" width="275" height="240" frameBorder="0" class="card__img">
+      <h3 style="text-align:center;">Google Translatotron 2</h3></a>
+      <h5 style="text-align:center;color:rgb(63, 62, 62);">Jan 2022</h5>
+    </figure>
+ </div>
+</article>
+<br>
+<br>
+<br>
+    
+</body>
+<footer>
+  <p>&copy; 2023 coolspeech.in. All rights reserved.</p>
+</footer>
+
+
+
+<script>
+  $(window).scroll(function(){
+    if($(window).scrollTop()){
+      $("nav").addClass("black");
+      $("div").addClass("block");
+      $("div").addClass("white");
+      $("div").addClass("white1");
+    }
+    else{
+      $("nav").removeClass("black");
+      $("div").removeClass("block");
+      $("div").removeClass("white");
+      $("div").removeClass("white1");
+    }
+  })
+  
+  consoleText(['About Us','About Us'], 'text',['tomato','rebeccapurple','lightblue']);
+
+function consoleText(words, id, colors) {
+  if (colors === undefined) colors = ['#fff'];
+  var visible = true;
+  var con = document.getElementById('console');
+  var letterCount = 1;
+  var x = 1;
+  var waiting = false;
+  var target = document.getElementById(id)
+  target.setAttribute('style', 'color:' + colors[0])
+  window.setInterval(function() {
+
+    if (letterCount === 0 && waiting === false) {
+      waiting = true;
+      target.innerHTML = words[0].substring(0, letterCount)
+      window.setTimeout(function() {
+        var usedColor = colors.shift();
+        colors.push(usedColor);
+        var usedWord = words.shift();
+        words.push(usedWord);
+        x = 1;
+        target.setAttribute('style', 'color:' + colors[0])
+        letterCount += x;
+        waiting = false;
+      }, 1000)
+    } else if (letterCount === words[0].length + 1 && waiting === false) {
+      waiting = true;
+      window.setTimeout(function() {
+        x = -1;
+        letterCount += x;
+        waiting = false;
+      }, 1000)
+    } else if (waiting === false) {
+      target.innerHTML = words[0].substring(0, letterCount)
+      letterCount += x;
+    }
+  }, 120)
+  window.setInterval(function() {
+    if (visible === true) {
+      con.className = 'console-underscore hidden'
+      visible = false;
+
+    } else {
+      con.className = 'console-underscore'
+
+      visible = true;
+    }
+  }, 400)
+}
+
+const faqs = document.querySelectorAll(".faq");
+for (const item of faqs) {
+  const curr_faq = item.childNodes;
+  const question = curr_faq[1];
+  const answer = curr_faq[3];
+  const icon = question.querySelector(".icon-main");
+  icon.addEventListener("click", function () {
+    answer.classList.toggle("non-active");
+    const i = icon.querySelector("i");
+    i.classList.toggle("fa-xmark");
+    i.classList.toggle("fa-plus");
+    console.log(i);
+  });
+}
+
+</script>
+
+
+</html>
